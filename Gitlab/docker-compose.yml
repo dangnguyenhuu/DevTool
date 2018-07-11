@@ -1,0 +1,12 @@
+# https://yoshinorin.net/2017/04/08/gitlab-using-by-docker/
+version: '2'
+services:
+  gitlab:
+    image: 'gitlab/gitlab-ce:latest'
+    restart: always
+    ports:
+      - '8000:80'
+    volumes:
+      - './config:/etc/gitlab'
+      - './logs:/var/log/gitlab'
+      - './data:/var/opt/gitlab'
